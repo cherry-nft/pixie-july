@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@icons/*": ["icons/*"],
+      "@components/*": ["components/*"],
+      "@data/*": ["data/*"],
+      "@/components/subframe/*": ["components/subframe/*"],
+      "@/components/sidebar/*": ["components/sidebar/*"],
+      "@/*": ["src/*"],
+      "@hooks/*": ["hooks/*"],
+      "@styles/*": ["styles/*"],
+      "@props/*": ["props/*"],
+      "@helpers/*": ["helpers/*"],
+      "@public/*": ["public/*"],
+      "@components/MusicCard/*": ["components/MusicCard/*"]
+    },
+   "declaration": true,
+   "declarationDir": "./types",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/VersusCard.jsx", "components/XCard.jsx", "components/HiCard.jsx", "components/NewCard.jsx", "lucide-react.d.ts"],
+  "exclude": ["node_modules"]
+}

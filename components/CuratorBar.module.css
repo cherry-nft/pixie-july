@@ -1,0 +1,134 @@
+.curatorBarContainer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* background: linear-gradient(to bottom, #0d0d0d, #121212); */
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  height: var(--curatorbar-height);
+  min-height: 90px; /* Increased default height */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+  overflow: hidden; /* Add this to prevent content from spilling out */
+}
+
+.innerFlex {
+  padding: 0 20px;
+  height: 100%;
+  position: relative; /* Add this for positioning context */
+}
+
+.airbnbAnimationContainer {
+  position: absolute;
+  /* background: linear-gradient(to bottom, #121212, #0d0d0d); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 95%; /* Increase this to allow more vertical space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible; /* Allow content to overflow if necessary */
+}
+
+/* Add this new class for mobile adjustment */
+.mobileAdjust {
+  padding-bottom: 20px; /* This will effectively move elements up by 20px */
+}
+
+.bagCount {
+  background: linear-gradient(to bottom, #121212, #0d0d0d);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  padding: 4px 8px;
+  transition: transform 0.3s ease;
+}
+
+.bagAnimation {
+  animation: popAnimation 0.3s ease;
+}
+
+@keyframes popAnimation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.collectingStatus {
+  background: linear-gradient(to bottom, #121212, #0d0d0d);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.statusDot {
+  background-color: var(--blue-9);
+  border-radius: 50%;
+}
+
+.statusText {
+  color: var(--blue-9);
+  font-size: 8px;
+}
+
+.actionButton {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.packInfo {
+  color: var(--blue-9);
+  font-size: 12px;
+}
+
+.curatorBarContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.curatorBarContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .curatorBarContainer {
+    height: var(--curatorbar-height, 120px); /* Increase height on mobile if necessary */
+  }
+
+  .innerFlex {
+    padding-top: 5px; /* Reduce top padding to allow more space for the animation */
+  }
+  
+  .mobileAdjust {
+    padding-bottom: 30px; /* Increase padding on mobile for more pronounced effect */
+  }
+
+  .airbnbAnimationContainer {
+    height: 100%; /* Use full height on mobile */
+  }
+}

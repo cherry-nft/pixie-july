@@ -1,0 +1,200 @@
+.predictionCard {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #1a1a1a;
+  padding: 20px;
+}
+
+.question {
+  font-family: 'SF Pro Rounded', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-family: 'SF Pro Rounded', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.optionsTitle {
+  font-family: 'SF Pro Rounded', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.optionWrapper {
+  background: #2a2a2a;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.optionHeader {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+.emojiBox {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  background: linear-gradient(to bottom, #121212, #0d0d0d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.option {
+  position: relative;
+  flex-grow: 1;
+  height: 60px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.optionImage {
+  transition: transform 0.3s ease;
+}
+
+.optionOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+}
+
+.optionName {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  right: 10px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.oddsBox {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  background: linear-gradient(to bottom, #121212, #0d0d0d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.dropdownWrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.expandedContent {
+  padding: 15px;
+}
+
+.packTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.packDescription {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.iconPack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.noOptions {
+  color: #ccc;
+  text-align: center;
+  font-style: italic;
+}
+
+.selectionOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.selectionOverlay span {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #4a90e2, #63b3ed);
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+}
+
+@media (max-width: 600px) {
+  .question {
+    font-size: 20px;
+  }
+
+  .optionName {
+    font-size: 16px;
+  }
+
+  .emojiBox {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .option {
+    height: 60px;
+  }
+}

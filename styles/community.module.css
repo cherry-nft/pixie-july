@@ -1,0 +1,22 @@
+.communityContainer {
+    display: flex;
+    flex-direction: column; /* Ensures items are aligned vertically */
+    align-items: center; /* Centers items vertically */
+    height: 100vh; /* Full viewport height */
+    justify-content: space-around; /* This will spread out the communities */
+    gap: 20px; /* Adds space between the communities */
+    flex-wrap: wrap;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+@media (max-width: 600px) {
+  .button-container {
+      padding: 10px;
+  }
+}

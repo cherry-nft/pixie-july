@@ -1,0 +1,160 @@
+@font-face {
+  font-family: 'SF Pro Rounded';
+  src: url('/fonts/SF-Pro-Rounded-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Rounded';
+  src: url('/fonts/SF-Pro-Rounded-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Rounded';
+  src: url('/fonts/SF-Pro-Rounded-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-family: 'SF Pro Rounded', sans-serif;
+}
+
+.content {
+  max-width: 900px;
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.inputContainer {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-family: 'SF Pro Rounded', sans-serif;
+}
+
+.mainContentField {
+  width: 100%;
+  min-height: 100px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  resize: none;
+  background-color: transparent;
+  color: black;
+  font-family: 'SF Pro Rounded', sans-serif;
+  font-weight: 500;
+}
+
+.mainContentField::placeholder {
+  color: black;
+}
+
+.collectionField {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background-color: transparent;
+  color: black;
+  font-family: 'SF Pro Rounded', sans-serif;
+  font-weight: 500;
+}
+
+.collectionField::placeholder {
+  color: black;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.buttonContainer button {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 5px;
+  font-family: 'SF Pro Rounded', sans-serif;
+}
+
+.mintButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.mintButton {
+  width: 100%;
+  max-width: 900px;
+  background: linear-gradient(45deg, #3f3f3f, #121212);
+  color: white;
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-family: 'SF Pro Rounded', sans-serif;
+}
+
+.mintButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.termsText {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: 'SF Pro Rounded', sans-serif;
+  font-weight: 500;
+}
+
+.termsLink {
+  color: #00ffff;
+  text-decoration: none;
+  font-family: 'SF Pro Rounded', sans-serif;
+  font-weight: 500;
+}
+
+.termsLink:hover {
+  text-decoration: underline;
+}
+
+.sf-pro-rounded-medium {
+  font-weight: 500;
+}
+
+.sf-pro-rounded-bold {
+  font-weight: 700;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
