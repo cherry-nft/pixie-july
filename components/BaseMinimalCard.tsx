@@ -235,7 +235,7 @@ export const BaseMinimalCard: React.FC<BaseMinimalCardProps> = ({
   }, []);
 
   const handleMediaClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
+    e.stopPropagation(); // Prevent event from bubbling up
     if (id) {
       router.push(`/collection/${encodeURIComponent(id)}`);
     }
@@ -290,12 +290,19 @@ export const BaseMinimalCard: React.FC<BaseMinimalCardProps> = ({
     }
   }, [id, onAddComment]);
 
+  const handleCardClick = (e: React.MouseEvent) => {
+    // This is to prevent any unwanted navigation
+    e.stopPropagation();
+    console.log('Card clicked, but not navigating');
+  };
+
   return (
     <motion.div
       className="rounded-[24px] bg-accent/90 text-primary p-[10px] shadow-[0px_1px_1px_0px_rgba(0,0,0,0.05),0px_1px_1px_0px_rgba(255,252,240,0.5)_inset,0px_0px_0px_1px_hsla(0,0%,100%,0.1)_inset,0px_0px_1px_0px_rgba(28,27,26,0.5)] dark:shadow-[0_1px_0_0_rgba(255,255,255,0.03)_inset,0_0_0_1px_rgba(255,255,255,0.03)_inset,0_0_0_1px_rgba(0,0,0,0.1),0_2px_2px_0_rgba(0,0,0,0.1),0_4px_4px_0_rgba(0,0,0,0.1),0_8px_8px_0_rgba(0,0,0,0.1)] "
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 25 }}
       transition={{ duration: 0.3 }}
+      onClick={handleCardClick}  // Add this line
     >
       <div className="flex flex-col h-full">
         {!isEmbed && communityLogo && (
@@ -311,8 +318,8 @@ export const BaseMinimalCard: React.FC<BaseMinimalCardProps> = ({
         )}
 
         <div
-          onClick={handleMediaClick}
-          className="relative w-full aspect-square mb-2"
+          className="relative w-full aspect-square mb-2 cursor-pointer"
+          onClick={handleMediaClick} // Add click handler only to this div
         >
           {children}
         </div>
@@ -339,7 +346,10 @@ export const BaseMinimalCard: React.FC<BaseMinimalCardProps> = ({
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              onClick={onAddToPack}
+              onClick={(e) => {
+                e.stopPropagation();
+                if (onAddToPack) onAddToPack();
+              }}
               style={{
                 background: 'linear-gradient(to bottom, #121212, #0d0d0d)',
                 border: '0.9px solid #000',
@@ -366,7 +376,10 @@ export const BaseMinimalCard: React.FC<BaseMinimalCardProps> = ({
               <p className="text-sm text-neutral-500">{description}</p>
             </div>
             <Button
-              onClick={handleCommentsClick}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleCommentsClick();
+              }}
               style={{
                 background: 'linear-gradient(to bottom, #121212, #000)',
                 border: '0.1px solid #000',
