@@ -292,9 +292,9 @@ export const BaseMinimalCard: React.FC<BaseMinimalCardProps> = ({
 
   return (
     <motion.div
-      className="rounded-[24px] bg-transparent w-full h-full flex flex-col justify-center items-center pt-10"
+      className="rounded-[24px] bg-accent/90 text-primary p-[10px] shadow-[0px_1px_1px_0px_rgba(0,0,0,0.05),0px_1px_1px_0px_rgba(255,252,240,0.5)_inset,0px_0px_0px_1px_hsla(0,0%,100%,0.1)_inset,0px_0px_1px_0px_rgba(28,27,26,0.5)] dark:shadow-[0_1px_0_0_rgba(255,255,255,0.03)_inset,0_0_0_1px_rgba(255,255,255,0.03)_inset,0_0_0_1px_rgba(0,0,0,0.1),0_2px_2px_0_rgba(0,0,0,0.1),0_4px_4px_0_rgba(0,0,0,0.1),0_8px_8px_0_rgba(0,0,0,0.1)] "
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={{ opacity: 1, y: 25 }}
       transition={{ duration: 0.3 }}
     >
       <div className="flex flex-col h-full">
