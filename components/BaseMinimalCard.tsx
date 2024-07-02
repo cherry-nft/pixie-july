@@ -188,6 +188,7 @@ interface BaseMinimalCardProps {
   initialReactions?: Record<string, number>;
   initialComments?: Comment[];
   onAddComment?: (cardId: string, comment: Omit<Comment, 'id'>) => void;
+  isUnlocked?: boolean; // Add this line
   // Add any other props that might be in commonProps
 }
 
@@ -208,6 +209,7 @@ export const BaseMinimalCard: React.FC<BaseMinimalCardProps> = ({
   initialReactions = { '🔥': 0, '❤️‍🔥': 0, '🎉': 0 },
   initialComments = [],
   onAddComment,
+  isUnlocked, // Add this line
 }) => {
   const router = useRouter();
   const [unlocked, setUnlocked] = useState(false);

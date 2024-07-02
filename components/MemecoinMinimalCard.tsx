@@ -28,6 +28,7 @@ type MemeCoinMinimalCardProps = {
   availableCount?: number;
   initialReactions?: Record<string, number>;
   initialComments?: Comment[];
+  isUnlocked?: boolean;
   onAddComment: (cardId: string, comment: Omit<Comment, 'id'>) => void;
 };
 
@@ -48,6 +49,7 @@ const MemeCoinMinimalCard: React.FC<MemeCoinMinimalCardProps> = ({
   availableCount,
   initialReactions,
   initialComments,
+  isUnlocked,
   onAddComment,
 }) => {
   return (
@@ -64,6 +66,7 @@ const MemeCoinMinimalCard: React.FC<MemeCoinMinimalCardProps> = ({
       availableCount={availableCount}
       initialReactions={initialReactions}
       initialComments={initialComments}
+      isUnlocked={isUnlocked}
       onAddComment={onAddComment}
     >
       <div className={styles.memecoinCard}>

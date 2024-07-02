@@ -19,7 +19,7 @@ interface StandardMinimalCardProps {
   onCommentsClick: () => void;
   onCollect: () => void;
   onAddToPack?: () => void;
-  isUnlocked: boolean;
+  isUnlocked?: boolean;
   joinedCount: number;
   availableCount: number;
   initialReactions?: Record<string, number>;

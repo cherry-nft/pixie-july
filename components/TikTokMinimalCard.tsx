@@ -21,6 +21,7 @@ interface TikTokMinimalCardProps {
   availableCount?: number;
   initialReactions?: Record<string, number>;
   initialComments: Comment[];
+  isUnlocked?: boolean;
   onAddComment: (cardId: string, comment: Omit<Comment, 'id'>) => void;
 }
 
@@ -37,6 +38,7 @@ export const TikTokMinimalCard: React.FC<TikTokMinimalCardProps> = ({
   joinedCount,
   availableCount,
   initialReactions,
+  isUnlocked,
 }) => {
   const embedRef = useRef<HTMLDivElement>(null);
 
@@ -81,6 +83,7 @@ export const TikTokMinimalCard: React.FC<TikTokMinimalCardProps> = ({
       initialReactions={initialReactions}
       initialComments={initialComments}
       onAddComment={onAddComment}
+      isUnlocked={isUnlocked}
     >
       <div className="flex justify-center items-center h-full py-2">
         <div 

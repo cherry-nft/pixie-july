@@ -20,6 +20,7 @@ interface YoutubeMinimalCardProps {
   availableCount?: number;
   initialReactions?: Record<string, number>;
   initialComments: Comment[];
+  isUnlocked?: boolean;
   onAddComment: (cardId: string, comment: Omit<Comment, 'id'>) => void;
 }
 
@@ -35,6 +36,7 @@ export const YoutubeMinimalCard: React.FC<YoutubeMinimalCardProps> = ({
   availableCount,
   initialReactions,
   initialComments,
+  isUnlocked,
   onAddComment,
 }) => {
   const embedRef = useRef<HTMLDivElement>(null);
@@ -74,6 +76,7 @@ export const YoutubeMinimalCard: React.FC<YoutubeMinimalCardProps> = ({
       initialReactions={initialReactions}
       initialComments={initialComments}
       onAddComment={onAddComment}
+      isUnlocked={isUnlocked}
     >
       <div className="flex justify-center items-center h-full py-2">
         <div 

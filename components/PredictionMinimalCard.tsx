@@ -13,6 +13,7 @@ type PredictionOption = {
   packTitle?: string;
   packDescription?: string;
   packIcons?: string[];
+  isUnlocked?: boolean;
 };
 
 type PredictionMinimalCardProps = {
